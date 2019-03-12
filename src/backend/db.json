@@ -1,0 +1,19 @@
+{
+    "reddits": [
+        {"id": 1, "name": "science"},
+        {"id": 2, "name": "tech"},
+        {"id": 3, "name": "politics"},
+        {"id": 4, "name": "music"}
+    ],
+    "posts": [
+        {"id": 1, "title": "Scientists discover some strange things", "redditId": 1},
+        {"id": 2, "title": "Scientists discover mutant powers", "redditId": 1},
+        {"id": 3, "title": "Docker users are in trouble", "redditId": 2},
+        {"id": 4, "title": "St. Patrick's day is comming", "redditId": 4}
+    ],
+    "comments": [
+        {"id": 1, "postId": 1, "text": "This is incredible!"},
+        {"id": 2, "postId": 2, "text": "This is so awesome!"},
+        {"id": 3, "postId": 4, "text": "I will go!"}
+    ]
+}
