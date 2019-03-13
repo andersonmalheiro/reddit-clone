@@ -1,0 +1,21 @@
+.input-group-prepend{
+    border: none !important;
+    border-radius: .25rem;
+    border-right: none !important;
+}
+
+.input-group-text{
+    background-color: white;
+    border-right: none !important;
+}
+
+.form-control{
+    border-left: none !important;
+    background-color: #EEE;
+}
+
+.form-control:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+    background-color: white;
+}
