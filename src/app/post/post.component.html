@@ -1,0 +1,30 @@
+<div class="post-card mb-2">
+  <div class="post-likes text-center">
+    <span class="fas fa-arrow-up like"></span>
+    <small style="font-weight: bold">{{post.likes}}</small>
+    <span class="fas fa-arrow-down like"></span>
+  </div>
+  <div class="post-content">
+    <div class="post-header ml-2">
+      <div class="row align-items-center post-header">
+        <span class="fas fa-user-circle mr-2"></span>
+        <span class="post-reddit">r/{{post.subreddit_name}}</span>
+        <small class="text-secondary ml-2">Posted by u/{{post.author}} at {{post.createdAt | date}}</small>
+      </div>
+    </div>
+    <div class="post-body ml-2">
+      {{post.description}}
+    </div>
+    <div class="post-footer text-secondary">
+      <span class="mr-2 d-lg-none d-md-none">
+        <i class="fas fa-arrow-up"></i>
+        {{post.likes}}
+        <i class="fas fa-arrow-down"></i>
+      </span>
+      <span>
+        <i class="fas fa-comment-alt mr-2"></i>
+        {{numComments}} Comments
+      </span>
+    </div>
+  </div>
+</div>
