@@ -1,0 +1,8 @@
+.subreddit-list{
+    list-style: none;
+    padding: 0;
+}
+
+.subreddit > a{
+    color: #111;
+}
