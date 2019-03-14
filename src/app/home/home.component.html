@@ -1,3 +1,7 @@
+<!-- Navbar -->
+<app-navbar (onSort)="getPosts($event)"></app-navbar>
+<!-- ./Navbar -->
+
 <div class="container mt-3">
   <div class="row justify-content-center">
     <div class="col-lg-11">
@@ -6,11 +10,11 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-lg-7">
-      <a href="" class="post-link" *ngFor="let post of posts">
-        <app-post [post]="post"></app-post>
-      </a>
-    </div>
+    
+    <!-- Feed -->
+    <app-feed [posts]="posts" class="col-lg-7" ></app-feed>
+    <!-- ./Feed -->
+    
     <div class="col-lg-4">
       <div class="card">
         <div class="card-header"
@@ -22,10 +26,12 @@
             The best posts on Reddit for you, pulled from the most active communities on Reddit. Check here to see the
             most shared, upvoted, and commented content on the internet.
           </p>
-          <button class="btn btn-block btn-primary mt-2">CREATE POST</button>
+          <button class="btn btn-block btn-primary mt-2 text-bold" data-toggle="modal" data-target="#add-post">CREATE POST</button>
         </div>
       </div>
       <app-subreddit-list></app-subreddit-list>
     </div>
   </div>
 </div>
+
+<app-add-post></app-add-post>

@@ -14,13 +14,16 @@ export class HomeComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit() {
-    this.getPosts();
+    this.getPosts('-createdAt');
   }
 
-
-  getPosts(): void{
-    this.postService.getPosts().subscribe(
-      posts => this.posts = posts
+  getPosts(ordering: string): void{
+    this.postService.getPosts(ordering).subscribe(
+      response => {
+        this.posts = response.slice(0,5)
+        console.log(this.posts)
+      }
     );
   }
+  
 }
