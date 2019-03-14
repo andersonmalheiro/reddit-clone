@@ -9,10 +9,11 @@
       <div class="row align-items-center post-header">
         <span class="fas fa-user-circle mr-2"></span>
         <span class="post-reddit">r/{{post.subreddit_name}}</span>
-        <small class="text-secondary ml-2">Posted by u/{{post.author}} at {{post.createdAt | date}}</small>
+        <small class="text-secondary ml-2">Posted by u/{{post.author}} at {{post.createdAt | date:'medium'}}</small>
       </div>
     </div>
     <div class="post-body ml-2">
+      <h5 class="h5 mb-3" style="font-weight: 500">{{post.title}}</h5>
       {{post.description}}
     </div>
     <div class="post-footer text-secondary">

@@ -7,18 +7,24 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PostService {
-  serverUrl = 'https://rest-reddit.herokuapp.com/api';
+  serverUrl = 'https://rest-reddit.herokuapp.com/api/';
 
   constructor(private http: HttpClient) { }
 
 
-  getPosts(): Observable<[]>{
-    console.log('get posts');
-    return this.http.get<[]>(this.serverUrl + '/posts').pipe(
+  getPosts(ordering: string): Observable<[]>{
+    return this.http.get<[]>(this.serverUrl + 'posts/' + `?order_by=${ordering}`).pipe(
       tap(_ => console.log("Posts fetched")),
       catchError(this.handleError<[]>('Get posts'))
-    )
-  }
+    );
+  };
+
+  addPost(post: {}): Observable<{}>{
+    return this.http.post<{}>(this.serverUrl + 'posts/', post).pipe(
+      tap(_ => console.log("Post added")),
+      catchError(this.handleError<{}>("Add post"))
+    );
+  };
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
