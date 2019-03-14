@@ -8,12 +8,12 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-arrow-up text-primary"></i>
-          Filter
+          <i class="fas fa-sort text-primary mr-1"></i>
+          Sort
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Popular</a>
-          <a class="dropdown-item" href="#">All</a>
+          <a class="dropdown-item" (click)="sort('-likes')">Popular</a>
+          <a class="dropdown-item" (click)="sort('-createdAt')">All/Recent</a>
         </div>
       </li>
     </ul>
@@ -31,7 +31,7 @@
   </div>
   
   <button class="btn btn-sm btn-outline-primary text-bold mr-2 px-4" style="font-size: 12px;">
-    <strong>LOG IN</strong>
+    LOG IN
   </button>
   <button class="btn btn-sm btn-primary text-bold mr-2 px-4" style="font-size: 12px;">
     SIGN UP
