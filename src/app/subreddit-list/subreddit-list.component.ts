@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SubredditService } from '../subreddit.service';
 
 @Component({
   selector: 'app-subreddit-list',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubredditListComponent implements OnInit {
 
-  constructor() { }
+  subreddits = [];
+
+  constructor(private subredditService: SubredditService) { }
+
+  getSubreddits(): void {
+    this.subredditService.getSubreddits().subscribe(
+      subreddits => this.subreddits = subreddits
+    );
+  }
 
   ngOnInit() {
+    this.getSubreddits();
   }
 
 }
