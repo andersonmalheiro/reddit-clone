@@ -1,0 +1,33 @@
+<div class="modal fade" id="add-subreddit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <form [formGroup]="subredditForm" (ngSubmit)="addSubreddit()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-bold" id="exampleModalLabel">Create a subreddit</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label class="text-bold">Name</label>
+                <input type="text" class="form-control" formControlName="name">
+              </div>
+              <div class="form-group">
+                <label class="text-bold">Description</label>
+                <textarea cols="30" rows="3" class="form-control" formControlName="description"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary text-bold" data-dismiss="modal">CLOSE</button>
+          <button type="submit" class="btn btn-primary text-bold">CREATE SUBREDDIT</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
