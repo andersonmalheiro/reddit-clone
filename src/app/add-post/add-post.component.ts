@@ -3,6 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { PostService } from '../post.service';
 import { SubredditService } from '../subreddit.service';
 
+import { HomeComponent } from '../home/home.component'
+
 @Component({
   selector: 'app-add-post',
   templateUrl: './add-post.component.html',
@@ -15,6 +17,7 @@ export class AddPostComponent implements OnInit {
     private formBuilder: FormBuilder,
     private subredditService: SubredditService,
     private postService: PostService,
+    private home: HomeComponent
   ) { }
   
   addForm = this.formBuilder.group({
@@ -31,7 +34,26 @@ export class AddPostComponent implements OnInit {
   }
 
   addPost(): void {
-    this.postService.addPost(this.addForm.value).subscribe();
+    this.postService.addPost(this.addForm.value).subscribe(
+      _ => {
+        this.home.getPosts('-createdAt'),
+        this.addForm.setValue({
+          title: '',
+          description: '',
+          subreddit: '',
+          author: ''
+        })
+      }
+    );
+  }
+
+  clear(): void {
+    this.addForm.setValue({
+      title: '',
+      description: '',
+      subreddit: '',
+      author: ''
+    })
   }
 
   ngOnInit() {
