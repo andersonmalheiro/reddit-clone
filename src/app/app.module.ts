@@ -12,6 +12,7 @@ import { SubredditListComponent } from './subreddit-list/subreddit-list.componen
 import { AddPostComponent } from './add-post/add-post.component';
 import { AddSubredditComponent } from './add-subreddit/add-subreddit.component';
 import { FeedComponent } from './feed/feed.component';
+import { SubredditComponent } from './subreddit/subreddit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FeedComponent } from './feed/feed.component';
     SubredditListComponent,
     AddPostComponent,
     AddSubredditComponent,
-    FeedComponent
+    FeedComponent,
+    SubredditComponent
   ],
   imports: [
     BrowserModule,

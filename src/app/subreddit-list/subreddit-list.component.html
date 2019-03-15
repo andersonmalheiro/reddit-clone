@@ -7,7 +7,7 @@
     <ul class="subreddit-list">
       <li class="subreddit mb-3" *ngFor="let sub of subreddits">
         <i class="fas fa-globe-americas text-primary fa-lg align-middle mr-2"></i>
-        <a href="/r/{{sub.name}}">r/{{sub.name}}</a>
+        <a [routerLink]="['r/',sub.name, {id:sub.id}]">r/{{sub.name}}</a>
         <a href="" class="btn btn-primary btn-sm float-right text-white">
           <i class="fas fa-eye"></i>
         </a>

@@ -9,3 +9,10 @@ html, body {
 .text-bold{
     font-weight: bold;
 }
+
+.img-circle{
+    border-radius: 50%;
+    border: 3px solid white;
+    outline: black;
+    background-color: white;
+}

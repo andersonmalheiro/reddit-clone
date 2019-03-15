@@ -12,17 +12,17 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
 
-  getPosts(ordering: string): Observable<[]>{
-    return this.http.get<[]>(this.serverUrl + 'posts/' + `?order_by=${ordering}`).pipe(
-      tap(_ => console.log("Posts fetched")),
+  getPosts(ordering: string): Observable<[]> {
+    return this.http.get<[]>(this.serverUrl + `posts/?order_by=${ordering}`).pipe(
+      tap(_ => console.log('Posts fetched')),
       catchError(this.handleError<[]>('Get posts'))
     );
   };
 
   addPost(post: {}): Observable<{}>{
     return this.http.post<{}>(this.serverUrl + 'posts/', post).pipe(
-      tap(_ => console.log("Post added")),
-      catchError(this.handleError<{}>("Add post"))
+      tap(_ => console.log('Post added')),
+      catchError(this.handleError<{}>('Add post'))
     );
   };
 

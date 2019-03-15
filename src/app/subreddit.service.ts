@@ -19,6 +19,20 @@ export class SubredditService {
     );
   };
 
+  getSubreddit(id: number): Observable<{}> {
+    return this.http.get<{}>(this.serverUrl + `subreddits/${id}/`).pipe(
+      tap(_ => console.log('Subreddit fetched')),
+      catchError(this.handleError<{}>('Get subreddit'))
+    );
+  };
+
+  getPostsBySubreddit(id: number, ordering: string): Observable<[]> {
+    return this.http.get<[]>(this.serverUrl + `subreddits/${id}/posts/?order_by=${ordering}`).pipe(
+      tap(_ => console.log('Subreddit posts fetched')),
+      catchError(this.handleError<[]>('Get posts by subreddit'))
+    );
+  };
+
   addSubreddit(data: {}): Observable<{}> {
     return this.http.post<{}>(this.serverUrl + 'subreddits/', data).pipe(
       tap(_ => console.log('subreddit added')),
