@@ -10,15 +10,20 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    
+
     <!-- Feed -->
-    <app-feed [posts]="posts" class="col-lg-7" ></app-feed>
+    <app-spinner *ngIf="loading" class="col-lg-7"></app-spinner>
+    <app-feed [posts]="posts" class="col-lg-7" *ngIf="posts?.length"></app-feed>
+    <div class="col-lg-7" *ngIf="!posts?.length && !loading">
+      <p class="text-bold">
+        Wow! Such empty.
+      </p>
+    </div>
     <!-- ./Feed -->
-    
+
     <div class="col-lg-4">
       <div class="card">
-        <div class="card-header"
-          style="background: url(https://www.redditstatic.com/desktop2x/img/id-cards/banner@2x.png) center center / cover no-repeat rgb(0, 121, 211);">
+        <div class="card-header" style="background: url(https://www.redditstatic.com/desktop2x/img/id-cards/banner@2x.png) center center / cover no-repeat rgb(0, 121, 211);">
         </div>
         <div class="card-body">
           <strong>r/popular</strong>
@@ -26,7 +31,8 @@
             The best posts on Reddit for you, pulled from the most active communities on Reddit. Check here to see the
             most shared, upvoted, and commented content on the internet.
           </p>
-          <button class="btn btn-block btn-primary mt-2 text-bold" data-toggle="modal" data-target="#add-post">CREATE POST</button>
+          <button class="btn btn-block btn-primary mt-2 text-bold" data-toggle="modal" data-target="#add-post">CREATE
+            POST</button>
         </div>
       </div>
       <app-subreddit-list></app-subreddit-list>

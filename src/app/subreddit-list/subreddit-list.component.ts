@@ -1,25 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { SubredditService } from '../subreddit.service';
+import { Component, OnInit } from "@angular/core";
+import { SubredditService } from "../subreddit.service";
 
 @Component({
-  selector: 'app-subreddit-list',
-  templateUrl: './subreddit-list.component.html',
-  styleUrls: ['./subreddit-list.component.css']
+  selector: "app-subreddit-list",
+  templateUrl: "./subreddit-list.component.html",
+  styleUrls: ["./subreddit-list.component.css"]
 })
 export class SubredditListComponent implements OnInit {
-
   subreddits = [];
+  loading: boolean;
 
-  constructor(private subredditService: SubredditService) { }
+  constructor(private subredditService: SubredditService) {}
 
   getSubreddits(): void {
-    this.subredditService.getSubreddits().subscribe(
-      subreddits => this.subreddits = subreddits
-    );
+    this.loading = true;
+    this.subredditService.getSubreddits().subscribe(subreddits => {
+      this.loading = false;
+      this.subreddits = subreddits;
+    });
   }
 
   ngOnInit() {
     this.getSubreddits();
   }
-
 }

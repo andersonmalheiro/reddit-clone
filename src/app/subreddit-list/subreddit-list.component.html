@@ -4,7 +4,8 @@
     <button class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#add-subreddit">Add</button>
   </strong>
   <div class="card-body">
-    <ul class="subreddit-list">
+    <app-spinner *ngIf="loading"></app-spinner>
+    <ul class="subreddit-list" *ngIf="subreddits?.length">
       <li class="subreddit mb-3" *ngFor="let sub of subreddits">
         <i class="fas fa-globe-americas text-primary fa-lg align-middle mr-2"></i>
         <a [routerLink]="['r/',sub.name, {id:sub.id}]">r/{{sub.name}}</a>
