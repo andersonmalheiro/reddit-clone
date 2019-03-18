@@ -1,5 +1,3 @@
 <div *ngIf="posts?.length">
-  <a href="" class="post-link" *ngFor="let post of posts">
-    <app-post [post]="post"></app-post>
-  </a>
+  <app-post [post]="post" *ngFor="let post of posts"></app-post>
 </div>
