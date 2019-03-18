@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
     this.postService.getPosts(ordering).subscribe(response => {
       this.loading = false;
       this.posts = response.slice(0, 5);
-      console.log(this.posts);
     });
   }
 }

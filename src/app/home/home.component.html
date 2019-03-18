@@ -12,9 +12,9 @@
   <div class="row justify-content-center">
 
     <!-- Feed -->
-    <app-spinner *ngIf="loading" class="col-lg-7"></app-spinner>
-    <app-feed [posts]="posts" class="col-lg-7" *ngIf="posts?.length"></app-feed>
-    <div class="col-lg-7" *ngIf="!posts?.length && !loading">
+    <app-spinner *ngIf="loading" class="col-lg-7 col-md-12 col-12"></app-spinner>
+    <app-feed [posts]="posts" class="col-lg-7 col-md-12 col-12" *ngIf="posts?.length"></app-feed>
+    <div class="col-lg-7 col-md-12 col-12" *ngIf="!posts?.length && !loading">
       <p class="text-bold">
         Wow! Such empty.
       </p>
