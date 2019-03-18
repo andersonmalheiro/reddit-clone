@@ -5,6 +5,8 @@ import { SubredditService } from '../subreddit.service';
 
 import { HomeComponent } from '../home/home.component'
 
+declare let $: any;
+
 @Component({
   selector: 'app-add-post',
   templateUrl: './add-post.component.html',
@@ -22,11 +24,11 @@ export class AddPostComponent implements OnInit {
   
   addForm = this.formBuilder.group({
     title: ['', [Validators.required, Validators.minLength(3)]],
-    description: ['', [Validators.required, Validators.minLength(3)]],
+    description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300)]],
     subreddit: ['', Validators.required],
     author: ['', Validators.required]
   })
-
+  
   getSubreddits(): void {
     this.subredditService.getSubreddits().subscribe(
       subreddits => this.subreddits = subreddits
@@ -35,7 +37,8 @@ export class AddPostComponent implements OnInit {
 
   addPost(): void {
     this.postService.addPost(this.addForm.value).subscribe(
-      _ => {
+      response => {
+        $('#add-post').modal('toggle')
         this.home.getPosts('-createdAt'),
         this.addForm.setValue({
           title: '',
@@ -43,6 +46,9 @@ export class AddPostComponent implements OnInit {
           subreddit: '',
           author: ''
         })
+      },
+      error => {
+        console.log(error.error)
       }
     );
   }

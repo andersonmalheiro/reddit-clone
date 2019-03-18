@@ -31,7 +31,7 @@
             </div>
             <div class="col-lg-6">
               <label class="text-bold">Subreddit</label>
-              <select class="custom-select" formControlName="subreddit" [class.is-valid]="addForm.get('subreddit').valid">
+              <select class="custom-select" formControlName="subreddit" [class.is-valid]="addForm.get('subreddit').valid" [class.is-invalid]="addForm.get('subreddit').invalid">
                 <option selected>---</option>
                 <option value="{{sub.id}}" *ngFor="let sub of subreddits">{{sub.name}}</option>
               </select>
