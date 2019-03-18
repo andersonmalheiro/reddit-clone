@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { post } from 'selenium-webdriver/http';
+import { PostService } from "../post.service";
 
 @Component({
   selector: 'app-post',
@@ -9,7 +9,13 @@ import { post } from 'selenium-webdriver/http';
 export class PostComponent implements OnInit {
   @Input() post;
   
-  constructor() { }
+  constructor(private postService: PostService) { }
+
+  likePost(id: number, post: {}): void {
+    this.postService.likePost(id, post).subscribe(
+      response => this.post = response
+    )
+  }
 
   ngOnInit() {
   }

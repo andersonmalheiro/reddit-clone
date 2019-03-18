@@ -1,6 +1,6 @@
 <div class="post-card mb-2">
   <div class="post-likes text-center">
-    <span class="fas fa-arrow-up like"></span>
+    <span class="fas fa-arrow-up like" (click)="likePost(post.id, post)"></span>
     <small style="font-weight: bold">{{post.likes}}</small>
     <span class="fas fa-arrow-down like"></span>
   </div>
