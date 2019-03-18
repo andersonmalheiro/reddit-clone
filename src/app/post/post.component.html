@@ -2,7 +2,7 @@
   <div class="post-likes text-center">
     <span class="fas fa-arrow-up like" (click)="likePost(post.id, post)"></span>
     <small style="font-weight: bold">{{post.likes}}</small>
-    <span class="fas fa-arrow-down like"></span>
+    <span class="fas fa-arrow-down like" (click)="dislikePost(post.id, post)"></span>
   </div>
   <div class="post-content">
     <div class="post-header ml-2">

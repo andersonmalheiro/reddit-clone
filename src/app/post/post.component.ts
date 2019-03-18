@@ -14,8 +14,14 @@ export class PostComponent implements OnInit {
   likePost(id: number, post: {}): void {
     this.postService.likePost(id, post).subscribe(
       response => this.post = response
-    )
-  }
+    );
+  };
+
+  dislikePost(id: number, post: {}): void {
+    this.postService.dislikePost(id, post).subscribe(
+      response => this.post = response
+    );
+  };
 
   ngOnInit() {
   }
