@@ -24,9 +24,10 @@ export class AddPostComponent implements OnInit {
   
   addForm = this.formBuilder.group({
     title: ['', [Validators.required, Validators.minLength(3)]],
-    description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(300)]],
+    description: ['', [Validators.required, Validators.minLength(3)]],
     subreddit: ['', Validators.required],
-    author: ['', Validators.required]
+    author: ['', Validators.required],
+    image: ['']
   })
   
   getSubreddits(): void {
@@ -40,12 +41,7 @@ export class AddPostComponent implements OnInit {
       response => {
         $('#add-post').modal('toggle')
         this.home.getPosts('-createdAt'),
-        this.addForm.setValue({
-          title: '',
-          description: '',
-          subreddit: '',
-          author: ''
-        })
+        this.clear()
       },
       error => {
         console.log(error.error)
@@ -58,7 +54,8 @@ export class AddPostComponent implements OnInit {
       title: '',
       description: '',
       subreddit: '',
-      author: ''
+      author: '',
+      image: ''
     })
   }
 

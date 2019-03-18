@@ -15,6 +15,7 @@
     <div class="post-body ml-2">
       <h5 class="h5 mb-3" style="font-weight: 500">{{post.title}}</h5>
       {{post.description}}
+      <img src="{{post.image}}" class="img-fluid" *ngIf="post.image" style="padding: 0">
     </div>
     <div class="post-footer text-secondary">
       <span class="mr-2 d-lg-none d-md-none">
