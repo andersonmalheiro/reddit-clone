@@ -28,14 +28,25 @@
           COMMUNITY DETAILS
         </div>
         <div class="card-body">
-          <div>
-            <i class="far fa-circle fa-2x"></i>
-            <span>
+          <div style="display: flex; align-items:center;">
+            <i class="far fa-circle fa-2x mr-2"></i>
+            <span class="text-medium">
               r/{{subreddit?.name}}
             </span>
           </div>
-
-          <p class="mt-3" style="font-size: 14px;">
+          <div style="display: flex; flex-direction: row;" class="my-2">
+            <div style="flex-grow: 1">
+              <span class="text-bold">{{posts?.length}}</span>
+              <br>
+              <small class="text-medium">Posts</small>
+            </div>
+            <div style="flex-grow: 1; border-left: 1px solid rgba(26, 26, 27, 0.07); padding-left: 1rem;">
+              <span class="text-bold">---</span>
+              <br>
+              <small class="text-medium">Subscribers</small>
+            </div>
+          </div>
+          <p  style="font-size: 14px;">
             {{subreddit?.description}}
           </p>
           <button class="btn btn-block btn-primary text-bold" style="font-size: 14px;">SUBSCRIBE</button>
