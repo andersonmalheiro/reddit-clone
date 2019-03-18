@@ -29,6 +29,15 @@ export class PostService {
     );
   }
 
+  likePost(id: number, post: {}): Observable<{}> {
+    return this.http.put<{}>(this.serverUrl + `posts/${id}/`, {
+      likes: post['likes'] += 1
+    }).pipe(
+      tap(_ => console.log("Post liked")),
+      catchError(this.handleError<{}>("Like post"))
+    );
+  };
+
   private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
