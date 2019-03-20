@@ -12,6 +12,8 @@ export class SubredditComponent implements OnInit {
 
   subreddit: {};
   posts: [];
+  showPost: boolean = false;
+  selectedPost: {};
 
   constructor(
     private location: Location,
@@ -35,5 +37,19 @@ export class SubredditComponent implements OnInit {
       response => this.posts = response
     );
   };
+
+  postDetail(): void {
+    this.showPost = !this.showPost;
+    if (this.showPost){
+      document.body.setAttribute('style', 'overflow: hidden')
+    } else {
+      document.body.setAttribute('style', '')
+    }
+  };
+
+  selectPost(post: {}): void {
+    this.selectedPost = post;
+    this.postDetail();
+  }
 
 }
