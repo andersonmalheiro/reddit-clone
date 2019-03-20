@@ -14,6 +14,7 @@ import { AddSubredditComponent } from "./add-subreddit/add-subreddit.component";
 import { FeedComponent } from "./feed/feed.component";
 import { SubredditComponent } from "./subreddit/subreddit.component";
 import { SpinnerComponent } from './spinner/spinner.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
     AddSubredditComponent,
     FeedComponent,
     SubredditComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
