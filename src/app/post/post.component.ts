@@ -7,7 +7,8 @@ import { PostService } from "../post.service";
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  @Input() post;
+  @Input() post: {};
+  @Input() comments: [];
   
   constructor(private postService: PostService) { }
 
