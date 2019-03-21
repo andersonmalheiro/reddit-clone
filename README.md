@@ -1,6 +1,8 @@
-# RedditClone
+# Reddit clone
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
+
+This is a Reddit's clone made with Angular, aiming to learn it's fundamentals. It uses a REST API also made by me with Django that mimics some of the Reddit features. 
 
 ## Development server
 
