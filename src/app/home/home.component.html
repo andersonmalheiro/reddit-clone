@@ -2,7 +2,11 @@
 <app-navbar (onSort)="getPosts($event)"></app-navbar>
 <!-- ./Navbar -->
 
-<div class="container mt-3">
+<!-- Post detail -->
+<app-post-detail [show]="showPost" (hide)="postDetail()" [post]="selectedPost" [comments]="comments" [subreddit]="subreddit"></app-post-detail>
+<!-- ./Post detail -->
+
+<div class="container mt-3" id="container">
   <div class="row justify-content-center">
     <div class="col-lg-11">
 
@@ -13,7 +17,7 @@
 
     <!-- Feed -->
     <app-spinner *ngIf="loading" class="col-lg-7 col-md-12 col-12"></app-spinner>
-    <app-feed [posts]="posts" class="col-lg-7 col-md-12 col-12" *ngIf="posts?.length"></app-feed>
+    <app-feed [posts]="posts" class="col-lg-7 col-md-12 col-12" *ngIf="posts?.length" (post)="selectPost($event)"></app-feed>
     <div class="col-lg-7 col-md-12 col-12" *ngIf="!posts?.length && !loading">
       <p class="text-bold">
         Wow! Such empty.
