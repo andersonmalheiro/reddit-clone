@@ -1,8 +1,8 @@
 <div class="post-popup" *ngIf="show">
   <div class="overlay"></div>
   <!-- <app-navbar></app-navbar> -->
-  <div class="container post-detail px-0" style="min-height: 100vh">
-    <nav class="navbar navbar-dark bg-black py-1">
+  <div class="container post-detail px-0">
+    <nav class="navbar navbar-dark bg-black py-1 sticky-top">
       <ul class="navbar-nav list-inline">
         <li class="nav-item nav-likes list-inline-item">
           <span class="fas fa-arrow-up text-secondary like"></span>
@@ -27,9 +27,7 @@
     </nav>
     <div class="row justify-content-center mt-4">
       <div class="col-lg-7">
-        <div class="card card-body">
-          <app-post [post]="post"></app-post>
-        </div>
+        <app-post [post]="post" [comments]="comments"></app-post>
       </div>
       <div class="col-lg-4">
         <div class="card">

@@ -3,8 +3,9 @@
 }
 
 .overlay {
-  min-height: 100vh;
+  min-height: 110vh;
   width: 100%;
+  height: 100%;
   position: absolute;
   background-color: rgba(32, 32, 32, 0.891);
 }
@@ -12,6 +13,8 @@
 .post-detail {
   position: relative;
   background-color: #646d73;
+  min-height: 110vh;
+  height: 100%;
 }
 
 .nav-likes {
@@ -29,9 +32,11 @@
 
 .post-popup {
   z-index: 20;
-  top: 10;
-  bottom: 10;
+  /* top: 10; */
+  /* bottom: 10; */
   left: 0;
   right: 0;
   position: fixed;
+  overflow-y: auto;
+  height: 100%;
 }
