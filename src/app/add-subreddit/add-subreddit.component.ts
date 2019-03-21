@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
-import { SubredditService } from '../subreddit.service';
+import { SubredditService } from '../services/subreddit.service';
 import { SubredditListComponent } from '../subreddit-list/subreddit-list.component';
 
 @Component({

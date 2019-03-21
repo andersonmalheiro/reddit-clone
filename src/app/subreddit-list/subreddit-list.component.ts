@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { SubredditService } from "../subreddit.service";
+import { SubredditService } from "../services/subreddit.service";
 
 @Component({
   selector: "app-subreddit-list",

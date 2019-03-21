@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { PostService } from '../post.service';
-import { SubredditService } from '../subreddit.service';
+import { PostService } from '../services/post.service';
+import { SubredditService } from '../services/subreddit.service';
 
 import { HomeComponent } from '../home/home.component'
 

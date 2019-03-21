@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { SubredditService } from '../subreddit.service';
+import { SubredditService } from '../services/subreddit.service';
 
 @Component({
   selector: 'app-subreddit',
