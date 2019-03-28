@@ -18,6 +18,18 @@ html, body {
     font-weight: 600;
 }
 
+.font-12 {
+    font-size: 12px;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+.font-10 {
+    font-size: 10px;
+}
+
 .img-circle{
     border-radius: 50%;
     border: 3px solid white;

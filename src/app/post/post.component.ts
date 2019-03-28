@@ -9,6 +9,7 @@ import { PostService } from "../services/post.service";
 export class PostComponent implements OnInit {
   @Input() post: {};
   @Input() comments: [];
+  @Input() showComments: boolean = false;
   
   constructor(private postService: PostService) { }
 

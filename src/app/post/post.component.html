@@ -29,4 +29,46 @@
       </span>
     </div>
   </div>
+  <div class="post-comments" *ngIf="showComments">
+    <div class="comments">
+      <ul class="list-unstyled">
+        <li *ngFor="let comment of comments" class="my-3">
+          <div class="row">
+            <div class="col-1 pr-1">
+              <i class="fas fa-arrow-up"></i>
+              <br>
+              <i class="fas fa-arrow-down"></i>
+            </div>
+
+            <div class="col-11">
+              <div class="row">
+                <small class="text-danger mr-3 font-12">
+                  {{comment.author}}
+                </small>
+                <small class="font-12">{{comment.createdAt | date: 'medium'}}</small>
+              </div>
+
+              <div class="row">
+                {{comment.text}}
+              </div>
+
+              <div class="row mt-1">
+                <span class="font-12 text-secondary text-semi-bold">
+                  <i class="fas fa-comment-alt align-middle mr-2"></i>
+                  Reply
+                </span>
+                <span class="text-semi-bold text-secondary ml-3 font-12">
+                  Share
+                </span>
+                <span class="text-semi-bold text-secondary ml-3 font-12">
+                  Report
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
